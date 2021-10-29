@@ -1,0 +1,18 @@
+path {
+    font-style:normal;
+    font-weight:400;
+    font-size:32.8125px;
+    font-family:'MS Shell Dlg 2';
+    fill:black;
+    fill-opacity:1;
+    stroke:#ffffff;
+    stroke-width:2.36074;
+    stroke-linecap:square;
+    stroke-linejoin:round;
+    stroke-opacity:1;
+}
+
+path:hover{
+    fill: coral;
+}
+
