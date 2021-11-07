@@ -37,3 +37,7 @@ WILL NEED TO INSTALL PACKAGES USING 'npm install'
 	exit
 	
 	"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath "D:\spide\Documents\Web\data" --auth
+	
+## Starting server and client:
+
+	npm start
