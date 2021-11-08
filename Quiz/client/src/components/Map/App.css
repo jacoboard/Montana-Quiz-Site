@@ -1,3 +1,35 @@
+
+
+
+
+#belowMap{
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15% 0;
+}
+
+#footer{
+  background-color: limegreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14% 0;
+  margin-top: 4%;
+  border-radius: 15px;
+}
+
+#postWraper{
+  background-color: magenta;
+  padding: 1%;
+  margin: 2% 0%;
+}
+
+
+
 .Map {
     text-align: center;
   }
@@ -53,4 +85,10 @@
   
   path:hover{
     fill: #dc8f41;
+  }
+
+  #report{
+    background-color: white;
+    font-size: 2em;
+    border-radius: 15px;
   }
