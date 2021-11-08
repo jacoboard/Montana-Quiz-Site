@@ -65,9 +65,9 @@ class Counties extends React.Component {
     handleSelect = (countyName) => {
         // <h1>{ countyId }</h1>;
         let county = this.state.counties.filter(c => c.id === countyName);
-        console.log(typeof(county))
+       // console.log(typeof(county))
         document.getElementById("report").innerHTML = county[0]["name"];
-    };
+    }; 
 
     render() { 
         return ( 
