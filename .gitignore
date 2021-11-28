@@ -1,4 +1,5 @@
 Quiz/client/node_modules
+Quiz/server/node_modules
 Quiz/client/node_modules/.bin/acorn.cmd
 Quiz/client/node_modules/.bin/acorn.ps1
 Quiz/client/node_modules/.bin/ansi-html
