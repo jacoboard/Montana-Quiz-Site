@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Counties from './Counties/counties.jsx';
+import FindCounties from './Counties/findCounties';
+import Seats from './Counties/seats';
 import './App.css';
 
 class Map extends Component {
@@ -8,9 +10,9 @@ class Map extends Component {
       <div className="App">
         <header className="App-header">
           <React.Fragment>
-            <main>
-              <Counties/>
-            </main>
+            
+              <FindCounties/>
+            
           </React.Fragment>
         </header>
       </div>
