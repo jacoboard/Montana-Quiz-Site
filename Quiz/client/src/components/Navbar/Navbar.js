@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.brandContainer}>
-                <Typography component={Link} to="/" variant="h3" align="center">Montana Quiz</Typography>
+                <Typography component={Link} to="/" variant="h3" align="center">Montana Quiz Site</Typography>
                 <img className={classes.image} src={montana} alt="montana" height="60" />
             </div>
             <Toolbar className={classes.toolbar}>
@@ -25,7 +25,6 @@ const Navbar = () => {
                     </div>
                 ) : (
                     <>
-                        <Button component={Link} to="/about" variant="contained" color="secondary">About</Button>
                         <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
                     </>
                 )}
