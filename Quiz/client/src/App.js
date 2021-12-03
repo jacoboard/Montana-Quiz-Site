@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { Container, AppBar, Typography } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
+import About from './About'
+import Home from './Home';
+import {Route, Link } from "react-router-dom"
 
 import { getPosts } from './actions/posts';
 import Posts from './components/Posts/Posts.js';
@@ -18,31 +21,14 @@ const App = () => {
     }, [dispatch]);
 
     return(
-        <Container maxWidth="md">
-            <AppBar className={classes.appBar} position="static" color="inherit">
-                <Typography variant="h2" align="center">Montana Quiz </Typography>
-                <img className={classes.image} src={memories} alt="memories" height="60" />
-            </AppBar>
-            <Container align="center">
-                    <Map />
-                    <div id="belowMap"> This is below map</div>
-            </Container>
-            <Container align="center">
-                <div id="formWraper">
-                    <Form />
-                </div>
-            </Container>
-            <Container align="center">
-                <div id="postWraper">
-                    <Posts />
-                </div>
-                    <div id="footer"> This is the footer</div>
-            </Container>
-            
-        </Container>
-
+        <div className="App">
+            <Route exact path="/" component={Home} />    
+            <Route exact path="/about" component={About} />   
         
-    )
+        </div>
+            
+    );
+    
 }
 
 export default App; 
