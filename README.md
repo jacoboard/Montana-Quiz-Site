@@ -1,36 +1,34 @@
 # Montana-Quiz-Site
 
-WILL NEED TO INSTALL PACKAGES USING 'npm install'
+## Setup MongoDB
 
-############ Setup MongoDB ############
+### (In Command Prompt)
 
-!!! Path to database folder = "D:\spide\Documents\Web\data"
-
-### Create database directory:
+#### Create database directory:
 	
 	md \data\db
 
-### Change path to DB from default: (If path to 'data' folder contains spaces, enclose the path in double quotes)
+#### Change path to DB from default:
 	
 	"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath "D:\spide\Documents\Web\data"
 
-### Start MongoDB:
+#### Start MongoDB:
 	
 	"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe"
 
-### Connect to MongoDB:
+#### Connect to MongoDB:
 	
 	"C:\Program Files\MongoDB\Server\5.0\bin\mongo.exe"
 
-### Create Admin database:
+#### Create Admin database:
 	
 	use admin
 
-### Create a root user:
+#### Create a root user:
 	
 	db.createUser({user:"root",pwd:"pass",roles:["root"]})
 
-### Restart MongoDB with Access Control:
+#### Restart MongoDB with Access Control:
 	
 	db.shutdownServer()
 	
@@ -38,6 +36,14 @@ WILL NEED TO INSTALL PACKAGES USING 'npm install'
 	
 	"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath "D:\spide\Documents\Web\data" --auth
 	
-## Starting server and client:
+## Starting Server and Client:
+
+#### Install node packages for Server and for Client
+##### Open two Command Prompt windows
+##### Navigate the first to the Client folder and the second to the Server folder
+
+	npm install
+	
+#### Start Server first and then Client with...
 
 	npm start
