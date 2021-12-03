@@ -8,10 +8,6 @@
 	
 	md \data\db
 
-#### Change path to DB from default:
-	
-	"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath "D:\spide\Documents\Web\data"
-
 #### Start MongoDB:
 	
 	"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe"
