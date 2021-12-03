@@ -27,4 +27,4 @@ export const createPost = async (req, res) => {
         console.log(error);
         res.status(409).json({ message: error.message });
    }
-} 
+}

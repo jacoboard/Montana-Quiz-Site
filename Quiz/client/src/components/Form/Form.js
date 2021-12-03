@@ -41,4 +41,4 @@ const Form = () => {
     return(<Paper className={classes.paper}>You have been added to the leaderboard!</Paper>);
 }
 
-export default Form; 
+export default Form;

@@ -1,7 +1,3 @@
-
-
-
-
 #belowMap{
   background-color: red;
   display: flex;
@@ -59,6 +55,36 @@
   .Map-link {
     color: #61dafb;
   }
+
+  #NavBar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+  }
+
+  #NavBar li{
+    display: inline;
+    align-items: center;
+  }
+
+  #NavBar li a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  #NavBar li:last-child{
+    border-bottom: none;
+  }
+
+  #NavBar li a:hover{
+    background-color: #422119;
+  }
   
   @keyframes Map-logo-spin {
     from {
@@ -69,7 +95,7 @@
     }
   }
   
-  path {
+  #Map_Div path {
     font-style:normal;
     font-weight:400;
     font-size:32.8125px;
@@ -83,9 +109,13 @@
     stroke-opacity:1;
   }
   
-  path:hover{
+  #Map_Div path:hover{
     fill: #dc8f41;
   }
+
+  .MuiButton-containedSecondary {
+    background-color: #002587;
+}
 
   #report{
     background-color: white;

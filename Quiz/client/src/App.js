@@ -1,34 +1,34 @@
-import React, { useEffect } from 'react';
-import { Container, AppBar, Typography } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
-import About from './About'
-import Home from './Home';
-import {Route, Link } from "react-router-dom"
+import React from 'react';
+import { Container } from '@material-ui/core';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
-import { getPosts } from './actions/posts';
-import Posts from './components/Posts/Posts.js';
-import Form from './components/Form/Form.js';
-import Map from './components/Map/Map.js';
-import memories from './images/Montana.png';
 import useStyles from './styles.js'
+import Navbar from './components/Navbar/Navbar.js';
+import Home from './components/Home/Home.js';
+import Auth from './components/Auth/Auth.js';
+import About from './components/About/About.js';
 
-const App = () => {
-    const classes = useStyles();
-    const dispatch = useDispatch();
+const App = () => (
+    <BrowserRouter>
+        <Container maxWidth="lg">
+            <Navbar />
+            <div id="NavBar">
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/leaderBoard">Leader Board</Link></li>
+                    <li><Link to="/">Game</Link></li>
+                    
+                </ul>
+            </div>
+            <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/auth" element={<Auth/>} />
+                <Route path="/about" element={<About/>} />
+            </Routes>
+        </Container>
+        <div id="footer">This is footer </div>
+    </BrowserRouter>
+);
 
-    useEffect(() => {
-        dispatch(getPosts());
-    }, [dispatch]);
-
-    return(
-        <div className="App">
-            <Route exact path="/" component={Home} />    
-            <Route exact path="/about" component={About} />   
-        
-        </div>
-            
-    );
-    
-}
-
-export default App; 
+export default App;

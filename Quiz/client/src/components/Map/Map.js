@@ -5,17 +5,15 @@ import './App.css';
 class Map extends Component {
   render () {
     return (
-      <div className="App">
         <header className="App-header">
           <React.Fragment>
-            <main>
+            <div id="Map_Div">
               <Counties/>
-            </main>
+            </div>
           </React.Fragment>
         </header>
-      </div>
     );
   }
 }
 
-export default Map; 
+export default Map;

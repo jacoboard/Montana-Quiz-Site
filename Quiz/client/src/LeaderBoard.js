@@ -9,19 +9,17 @@ import Map from './components/Map/Map.js';
 import memories from './images/Montana.png';
 import useStyles from './styles.js'
 
-function About(){
+function LeaderBoard(){
     const classes = useStyles();
     return(
         <div>
-            <h1>THIS IS THE ABOUT PAGE</h1>
+            <h1 align="center">THIS IS THE LeaderBoard PAGE</h1>
         <Container maxWidth="md">
             <AppBar className={classes.appBar} position="static" color="inherit">
                 <Typography variant="h2" align="center">Montana Quiz </Typography>
                 <img className={classes.image} src={memories} alt="memories" height="60" />
             </AppBar>
             <Container align="center">
-                    <Map />
-                    <div id="belowMap"> This is below map</div>
             </Container>
             <Container align="center">
                 <div id="formWraper">
@@ -32,7 +30,6 @@ function About(){
                 <div id="postWraper">
                     <Posts />
                 </div>
-                <div id="footer"> This is the footer</div>
             </Container>
             
         </Container>
@@ -42,4 +39,4 @@ function About(){
     );
 }
 
-export default About;
+export default LeaderBoard;

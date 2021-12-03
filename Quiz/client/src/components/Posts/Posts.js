@@ -37,7 +37,7 @@ import { useSelector } from 'react-redux';
         align: 'right',
         format: (value) => value.toFixed(),
     },
-  ]; 
+  ];
   
   function EnhancedTableHead(props) {
     const { order, orderBy, onRequestSort } =

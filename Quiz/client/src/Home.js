@@ -13,7 +13,6 @@ function Home(){
     const classes = useStyles();
 
     return(
-        <div>
         <Container maxWidth="md">
             <AppBar className={classes.appBar} position="static" color="inherit">
                 <Typography variant="h2" align="center">Montana Quiz </Typography>
@@ -32,13 +31,10 @@ function Home(){
                 <div id="postWraper">
                     <Posts />
                 </div>
-                <div id="footer"> This is the footer</div>
+               
             </Container>
-            
         </Container>
-
         
-        </div>
     );
 }
 
