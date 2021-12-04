@@ -117,18 +117,23 @@ class Counties extends React.Component {
 
     handleSelect = (countyName) => {
 
+        if(this.numClicks == this.counties.length){
+            this.reset();
+            this.gameStarted = false;
+        }
         if(!this.gameStarted){
             this.handleStart();
         }
+       
         if(countyName == this.counties[this.numClicks]){
             document.getElementById(this.counties[this.numClicks]).style.fill = "green";
-            this.numClicks++;
             this.numCorrect++;
             document.getElementById("score").innerHTML = this.numCorrect + "/56";
         }else if(countyName != this.counties[this.numClicks]){
             document.getElementById(this.counties[this.numClicks]).style.fill = "red";
-            this.numClicks++;
         }
+        this.numClicks++;
+
 
         if(this.numClicks == this.counties.length){
             if(this.numCorrect == 56){
