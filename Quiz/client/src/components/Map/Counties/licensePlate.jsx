@@ -103,6 +103,9 @@ class Counties extends React.Component {
 
     handleGiveUp = () => {
         document.getElementById("start").disabled = false;
+        for(let i = 0; i < this.counties.length; i++){
+            document.getElementById(this.counties[i]).style.fill = "antiquewhite";
+        }
         this.reset();
     };
 
