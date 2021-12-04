@@ -9,7 +9,7 @@ import Home from './components/Home/Home.js';
 import Auth from './components/Auth/Auth.js';
 import About from './components/About/About.js';
 import Game2LeaderBoard from './components/LeaderBoards/Game2'
-import CountySelectionLeaderBoard from './components/LeaderBoards/Game2'
+import CountySelectionLeaderBoard from './components/LeaderBoards/CountySelectionLeaderBoard'
 import Game3LeaderBoard from './components/LeaderBoards/Game3'
 import Game2 from './components/Games/Game2'
 import CountySelection from './components/Games/CountySelector'

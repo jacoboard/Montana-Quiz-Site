@@ -8,23 +8,13 @@ function CountySelector(){
     const classes = useStyles();
     return(
         <div>
-            <h1>THIS IS THE ABOUT PAGE</h1>
-                <Container maxWidth="md">
-                    <Container align="center">
-                            <Map />
-                            <div id="belowMap"> This is below map</div>
-                    </Container>
-                    <Container align="center">
-                        <div id="formWraper">
-                            <Form />
-                        </div>
-                    </Container>
-                    <Container align="center">
-                        <div id="postWraper">
-                            <Posts />
-                        </div>
-                    </Container>
-                </Container>
+            <Container maxWidth="md">
+                <Container align="center">
+                     <div id="formWraper">
+                        <Form />
+                    </div>
+                </Container>  
+            </Container>
         </div>
     );
 }
