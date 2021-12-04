@@ -89,7 +89,6 @@ class Counties extends React.Component {
     }
 
     handleStart = () => {
-        //this.startTimer()
         if(this.numClicks != 0){
             this.reset();
         }
@@ -110,6 +109,9 @@ class Counties extends React.Component {
     }
 
     handleGiveUp = () => {
+        if(document.getElementById("start").innerHTML == "Restart"){
+            document.getElementById("start").innerHTML = "Start";
+        }
         document.getElementById("start").disabled = false;
         document.getElementById("countyToFind").innerHTML = "";
         this.reset();
@@ -117,20 +119,26 @@ class Counties extends React.Component {
 
     handleSelect = (countyName) => {
 
+        if(this.numClicks == this.counties.length){
+            this.reset();
+            this.gameStarted = false;
+        }
         if(!this.gameStarted){
             this.handleStart();
         }
+       
         if(countyName == this.counties[this.numClicks]){
             document.getElementById(this.counties[this.numClicks]).style.fill = "green";
-            this.numClicks++;
             this.numCorrect++;
             document.getElementById("score").innerHTML = this.numCorrect + "/56";
         }else if(countyName != this.counties[this.numClicks]){
             document.getElementById(this.counties[this.numClicks]).style.fill = "red";
-            this.numClicks++;
         }
+        this.numClicks++;
+
 
         if(this.numClicks == this.counties.length){
+            document.getElementById("start").innerHTML = "Restart";
             if(this.numCorrect == 56){
                 document.getElementById("countyToFind").innerHTML = "Way to go! You got 100% genius";
             }
