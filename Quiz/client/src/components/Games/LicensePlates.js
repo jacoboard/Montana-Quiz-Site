@@ -11,8 +11,10 @@ function LicensePlates(){
             <h1>THIS IS THE ABOUT PAGE</h1>
                 <Container maxWidth="md">
                     <Container align="center">
+                        <div id="Map_Div">
                             <LincensePlate />
-                            <div id="belowMap"> This is below map</div>
+                        </div>
+                        <div id="belowMap"> This is below map</div>
                     </Container>
                     <Container align="center">
                         <div id="formWraper">

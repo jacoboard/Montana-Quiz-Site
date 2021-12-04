@@ -11,7 +11,10 @@ function CountySeats(){
             <h1>THIS IS THE ABOUT PAGE</h1>
                 <Container maxWidth="md">
                     <Container align="center">
-                            <Seats />
+                    <div id="Map_Div">
+                        <Seats />
+                    </div>
+                            
                             <div id="belowMap"> This is below map</div>
                     </Container>
                     <Container align="center">

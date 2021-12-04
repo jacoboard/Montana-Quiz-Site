@@ -8,12 +8,15 @@ import Navbar from './components/Navbar/Navbar.js';
 import Home from './components/Home/Home.js';
 import Auth from './components/Auth/Auth.js';
 import About from './components/About/About.js';
-import Game2LeaderBoard from './components/LeaderBoards/Game2'
+import Game2LeaderBoard from './components/LeaderBoards/LicensePlatesLeaderBoard'
 import CountySelectionLeaderBoard from './components/LeaderBoards/CountySelectionLeaderBoard'
-import Game3LeaderBoard from './components/LeaderBoards/Game3'
+import Game3LeaderBoard from './components/LeaderBoards/FindCountyLeaderBoard'
 import Game2 from './components/Games/LicensePlates'
 import CountySelection from './components/Games/FindCounty'
 import Game3 from './components/Games/CountySeats'
+import FindCounty from './components/Games/FindCounty';
+import LicensePlates from './components/Games/LicensePlates';
+import CountySeats from './components/Games/CountySeats';
 
 
 function App() {
@@ -30,17 +33,17 @@ function App() {
                     <ul class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn">Games</a>
                         <div class="dropdown-content">
-                            <li> <Link to="/game2">Game 2</Link></li>
-                            <li> <Link to="/countySelection">County Selection</Link></li>
-                            <li> <Link to="/game3">Game 3</Link></li>
+                            <li> <Link to="/LicensePlates">License Plates</Link></li>
+                            <li> <Link to="/findCounty">County Selection</Link></li>
+                            <li> <Link to="/countySeats">County Seats</Link></li>
                         </div>     
                     </ul>
                     <ul class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn">Leader Boards</a>
                         <div class="dropdown-content">
-                            <li> <Link to="/game2LeaderBoard">Game 2</Link></li>
-                            <li> <Link to="/countySelectionLeaderBoard">County Selection</Link></li>
-                            <li> <Link to="/game3LeaderBoard">Game 3</Link></li>
+                            <li> <Link to="/LicensePlatesLeaderBoard">License Plates</Link></li>
+                            <li> <Link to="/findCountyLeaderBoard">County Selection</Link></li>
+                            <li> <Link to="/countySeatsLeaderBoard">County Seats</Link></li>
                         </div>     
                     </ul>
                     
@@ -51,6 +54,12 @@ function App() {
                 <Route path="/" element={<Home/>} />
                 <Route path="/auth" element={<Auth/>} />
                 <Route path="/about" element={<About/>} />
+                <Route path="/findCounty" element={<FindCounty/>} />
+                <Route path="/LicensePlates" element={<LicensePlates/>} />
+                <Route path="/countySeats" element={<CountySeats/>} />
+                <Route path="/countySelectionLeaderBoards" element={<CountySelectionLeaderBoard/>} />
+                <Route path="/findCountyLeaderBoard" element={<Auth/>} />
+                <Route path="/licensePlatesLeaderBoard" element={<LicensePlates/>} />
             </Routes>
         </Container>
 
