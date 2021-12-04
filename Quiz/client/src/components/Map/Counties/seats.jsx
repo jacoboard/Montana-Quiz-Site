@@ -159,12 +159,6 @@ class Counties extends React.Component {
             >
                 Give Up
             </button>
-            <button 
-                    onClick={() => this.handleSkip()} 
-                    className="btn btn-secondary btn-sm"
-            >
-                Skip
-            </button>
             <form>
                 <input type="text" id="gameinput"
                     onChange={e => {this.checkGameInput(e.target.value);}}
