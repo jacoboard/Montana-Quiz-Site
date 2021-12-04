@@ -8,7 +8,9 @@ function CountySeats(){
     const classes = useStyles();
     return(
         <div>
-            <h1>THIS IS THE ABOUT PAGE</h1>
+            <h1>County Seats Selection</h1>
+            <h2>Ready to test your skills?</h2>
+            <h3>  </h3>
                 <Container maxWidth="md">
                     <Container align="center">
                     <div id="Map_Div">
