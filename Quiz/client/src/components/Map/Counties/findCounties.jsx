@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Montana from './Montana';
-//import StopWatch from './stopwatch';
 
 class Counties extends React.Component {
     state = {
@@ -64,18 +63,11 @@ class Counties extends React.Component {
         ]
     };
 
-    //timer = document.getElementById("stopwatch");
-    //hr = 0;
-    //min = 0;
-    //sec = 0;
-    //stoptime = true;
     numClicks = 0;
     numCorrect = 0;
     numCounties = 56;
     counties = [];
     gameStarted = false;
-
-    
 
     //https://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-javascript
     shuffle = (array) => {
@@ -89,56 +81,6 @@ class Counties extends React.Component {
         return array;
     }
 
-    /*startTimer = () => {
-        if(this.stoptime == true) {
-            this.stoptime = false;
-            this.timerCycle(); 
-        }
-    }
-
-    stopTimer = () => {
-        if(this.stoptime == false) {
-            this.stoptime = true;
-        }
-    }
-
-    timerCycle = () => {
-        if (this.stoptime == false) {
-            this.sec = parseInt(this.sec);
-            this.min = parseInt(this.min);
-            this.hr = parseInt(this.hr);
-
-            this.sec = this.sec + 1;
-
-            if(this.sec == 60){
-                this.min = this.min + 1;
-                this.sec = 0; 
-            }
-            if(this.min == 60){
-                this.hr = this.hr + 1;
-                this.min = 0;
-                this.sec = 0;
-            }
-
-            if(this.sec < 10 || this.sec == 0){
-                this.sec = '0' + this.sec;
-            }
-            if(this.min < 10 || this.min == 0){
-                this.min = '0' + this.min;
-            }
-            if(this.hr < 10 || this.hr == 0){
-                this.hr = '0' + this.hr;
-            }
-
-            this.timer.innerHTML = this.hr + ':' + this.min + ':' + this.sec;
-
-            setTimeout("timerCycle()", 1000);
-        }
-    }
-
-    resetTimer = () => {
-        this.timer.innerHTML = '00:00:00';
-    }*/
     reset = () => {
         for(let i = 0; i < this.counties.length; i++){
             document.getElementById(this.counties[i]).style.fill = "antiquewhite";
@@ -165,24 +107,16 @@ class Counties extends React.Component {
         this.numCorrect = 0;
         document.getElementById("countyToFind").innerHTML = counties[this.numClicks] + " County";
         document.getElementById("start").disabled = true;
-
-        
-        
-        //this.stopTimer();
     }
 
     handleGiveUp = () => {
         document.getElementById("start").disabled = false;
         document.getElementById("countyToFind").innerHTML = "";
         this.reset();
-       // this.stopTimer();
     }
 
     handleSelect = (countyName) => {
-        // <h1>{ countyId }</h1>;
-        //let county = this.state.counties.filter(c => c.id === countyName);
-        //this.setState({ current: county[0]["name"] });
-        //return county[0]["id"];
+
         if(!this.gameStarted){
             this.handleStart();
         }
@@ -204,7 +138,6 @@ class Counties extends React.Component {
                 document.getElementById("countyToFind").innerHTML = "Congrats; game over";
             }
             document.getElementById("start").disabled = false;
-            //take to new page
         }else{
             document.getElementById("countyToFind").innerHTML = this.counties[this.numClicks] + " County";
 
@@ -229,9 +162,6 @@ class Counties extends React.Component {
             >
                 Give Up
             </button>
-            <span id="stopwatch">
-                00:00:00
-            </span>
             <span id="score"></span>
             <React.Fragment>
                 <Montana 

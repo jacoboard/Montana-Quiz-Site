@@ -81,28 +81,31 @@ class Counties extends React.Component {
     };
 
     handleStart = () => {
-        //this.startTimer()
-        this.reset();
-        document.getElementById("score").innerHTML = this.numCorrect + "/56";
-        this.gameStarted = true;
-        document.getElementById("start").disabled = true;
-        let counties = [];
-        counties.length = this.state.counties.length;
-        for(let i = 0; i < counties.length; i++){
-            counties[i] = this.state.counties[i].name;
+        if(!this.gameStarted){
+            this.reset();    
+            document.getElementById("score").innerHTML = this.numCorrect + "/56";
+            this.gameStarted = true;
+            document.getElementById("start").disabled = true;
+            let counties = [];
+            counties.length = this.state.counties.length;
+            for(let i = 0; i < counties.length; i++){
+                counties[i] = this.state.counties[i].name;
+            }
+            counties = this.shuffle(counties);
+            this.counties = counties;
+            this.numCorrect = 0;
+            document.getElementById("countyToFind").innerHTML = "Enter the county seat of " + this.counties[this.numCorrect] + " County";
+            document.getElementById(this.counties[this.numCorrect]).style.fill = "blue";
         }
-        counties = this.shuffle(counties);
-        this.counties = counties;
-        this.numCorrect = 0;
-        document.getElementById("countyToFind").innerHTML = "Enter the county seat of " + this.counties[this.numCorrect] + " County";
-        //this.stopTimer();
     }
 
 
     handleGiveUp = () => {
         document.getElementById("start").disabled = false;
+        for(let i = 0; i < this.counties.length; i++){
+            document.getElementById(this.counties[i]).style.fill = "antiquewhite";
+        }
         this.reset();
-       // this.stopTimer();
     };
 
     handleSelect = (countyName) => {
@@ -116,11 +119,12 @@ class Counties extends React.Component {
 
         let county = this.state.counties.filter(c => c.name === this.counties[this.numCorrect]);
         let seat = county[0].seat.replace(/\s+/g, '').toLowerCase();
-        console.log(seat);
+
         if(entry === seat){
-            document.getElementById(this.counties[this.numCorrect]).style.fill = "antiquewhite";
+            document.getElementById(this.counties[this.numCorrect]).style.fill = "green";
             document.getElementById("gameinput").value = "";
             this.numCorrect ++;
+            document.getElementById(this.counties[this.numCorrect]).style.fill = "blue";
             document.getElementById("score").innerHTML = this.numCorrect + "/56";
         }
 
@@ -131,7 +135,6 @@ class Counties extends React.Component {
         else{
             document.getElementById("countyToFind").innerHTML = "Enter the county seat of " + this.counties[this.numCorrect] + " County";
             console.log(this.counties[this.numCorrect]);
-            document.getElementById(this.counties[this.numCorrect]).style.fill = "blue";
         }
     }
 
@@ -162,6 +165,7 @@ class Counties extends React.Component {
             <form>
                 <input type="text" id="gameinput"
                     onChange={e => {this.checkGameInput(e.target.value);}}
+                    onClick={() => this.handleStart()}
                     placeholder="Enter county seat">
                 </input>
             </form>
