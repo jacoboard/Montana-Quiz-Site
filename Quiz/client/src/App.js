@@ -8,15 +8,12 @@ import Navbar from './components/Navbar/Navbar.js';
 import Home from './components/Home/Home.js';
 import Auth from './components/Auth/Auth.js';
 import About from './components/About/About.js';
-import Game2LeaderBoard from './components/LeaderBoards/LicensePlatesLeaderBoard'
+import LicensePlatesLeaderBoard from './components/LeaderBoards/LicensePlatesLeaderBoard'
 import CountySelectionLeaderBoard from './components/LeaderBoards/CountySelectionLeaderBoard'
-import Game3LeaderBoard from './components/LeaderBoards/FindCountyLeaderBoard'
-import Game2 from './components/Games/LicensePlates'
-import CountySelection from './components/Games/FindCounty'
-import Game3 from './components/Games/CountySeats'
+import findCountyLeaderBoard from './components/LeaderBoards/FindCountyLeaderBoard'
+import LicensePlates from './components/Games/LicensePlates'
+import CountySeats from './components/Games/CountySeats'
 import FindCounty from './components/Games/FindCounty';
-import LicensePlates from './components/Games/LicensePlates';
-import CountySeats from './components/Games/CountySeats';
 
 
 function App() {
@@ -59,7 +56,7 @@ function App() {
                 <Route path="/countySeats" element={<CountySeats/>} />
                 <Route path="/countySelectionLeaderBoards" element={<CountySelectionLeaderBoard/>} />
                 <Route path="/findCountyLeaderBoard" element={<Auth/>} />
-                <Route path="/licensePlatesLeaderBoard" element={<LicensePlates/>} />
+                <Route path="/licensePlatesLeaderBoard" element={<LicensePlatesLeaderBoard/>} />
             </Routes>
         </Container>
 

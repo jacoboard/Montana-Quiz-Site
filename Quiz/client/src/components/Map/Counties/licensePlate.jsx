@@ -125,7 +125,7 @@ class Counties extends React.Component {
         }
 
         if(this.numCorrect == this.counties.length){
-            document.getElementById("countyToFind").innerHTML = "Way to go! You got 100% genius";
+            document.getElementById("countyToFind").innerHTML = "Way to go! You got 100%, you're a genius!";
             document.getElementById("start").disabled = false;
         }
         else{
@@ -138,6 +138,9 @@ class Counties extends React.Component {
     reset = () => {
         document.getElementById("score").innerHTML = "";
         this.numCorrect = 0;
+        for(let i = 0; i < this.counties.length; i++){
+            document.getElementById(this.counties[i]).style.fill = "antiquewhite";
+        }
     }
 
     render() { 
