@@ -8,9 +8,12 @@ function CountySeats(){
     const classes = useStyles();
     return(
         <div>
-            <h1>County Seats Selection</h1>
-            <h2>Ready to test your skills?</h2>
-            <h3>  </h3>
+            <div id='GameInstructions'>
+            <h1>County Seats Guess</h1>
+            <h2>Do you know the county seats of each county?</h2>
+            <h3>When you're ready to begin click on form or start button to begin!</h3>
+            </div>
+            
                 <Container maxWidth="md">
                     <Container align="center">
                     <div id="Map_Div">

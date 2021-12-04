@@ -8,22 +8,21 @@ function LicensePlates(){
     const classes = useStyles();
     return(
         <div>
-            <h1>THIS IS THE ABOUT PAGE</h1>
+            <div id='GameInstructions'>
+            <h1>License Plates Finding</h1>
+            <h2>Ready to test your skills?</h2>
+            <h2>This is a test of if you know that License Plates number of a county</h2>
+            <h2>Press start to begin or click on the form to begin!</h2>
+            </div>
                 <Container maxWidth="md">
                     <Container align="center">
                         <div id="Map_Div">
                             <LincensePlate />
                         </div>
-                        <div id="belowMap"> This is below map</div>
                     </Container>
                     <Container align="center">
                         <div id="formWraper">
                             <Form />
-                        </div>
-                    </Container>
-                    <Container align="center">
-                        <div id="postWraper">
-                            <Posts />
                         </div>
                     </Container>
                 </Container>

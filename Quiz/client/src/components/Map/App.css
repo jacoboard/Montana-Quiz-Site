@@ -67,9 +67,17 @@
   position:bottom;
 }
 
+#GameInstructions{
+  text-align: center;
+}
+
 html {
   font-family: fantasy;
   height: 100vh;
+}
+
+#LeaderBoardDiv{
+  text-align: center;
 }
 
 .LeaderBoardsDropDown li a{

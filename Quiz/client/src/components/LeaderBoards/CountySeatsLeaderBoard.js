@@ -4,21 +4,14 @@ import Form from '../Form/Form.js';
 import Map from '../Map/Map.js';
 import useStyles from './styles.js'
 
-function CountySelectorLeaderBoard(){
+function CountySeatsLeaderBoard(){
     const classes = useStyles();
     return(
         <div>
-            <h1>THIS IS THE CountySelectorLeaderBoard PAGE</h1>
+            <div id='LeaderBoardDiv'>
+            <h1>County Seats Game LeaderBoard</h1>
+            </div>
                 <Container maxWidth="md">
-                    <Container align="center">
-                            <Map />
-                            <div id="belowMap"> This is below map</div>
-                    </Container>
-                    <Container align="center">
-                        <div id="formWraper">
-                            <Form />
-                        </div>
-                    </Container>
                     <Container align="center">
                         <div id="postWraper">
                             <Posts />
@@ -29,4 +22,4 @@ function CountySelectorLeaderBoard(){
     );
 }
 
-export default CountySelectorLeaderBoard;
+export default CountySeatsLeaderBoard;

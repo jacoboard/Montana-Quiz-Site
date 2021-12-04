@@ -8,22 +8,21 @@ function FindCounty(){
     const classes = useStyles();
     return(
         <div>
-            <h1>THIS IS THE ABOUT PAGE</h1>
+            <div id='GameInstructions'>
+            <h1>County Seats Selection</h1>
+            <h2>Ready to test your skills?</h2>
+            <h3>Here you can click on the correct county for a county seat</h3>
+            <h3>Click Start when ready to begin!</h3>
+            </div>
                 <Container maxWidth="md">
                     <Container align="center">
                         <div id="Map_Div">
                             <FindCounties />
                         </div>
-                        <div id="belowMap"> This is below map</div>
                     </Container>
                     <Container align="center">
                         <div id="formWraper">
                             <Form />
-                        </div>
-                    </Container>
-                    <Container align="center">
-                        <div id="postWraper">
-                            <Posts />
                         </div>
                     </Container>
                 </Container>
