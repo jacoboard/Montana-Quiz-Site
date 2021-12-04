@@ -63,19 +63,109 @@ class Counties extends React.Component {
         ]
     };
 
-    handleSelect = (countyName) => {
-        // <h1>{ countyId }</h1>;
-        let county = this.state.counties.filter(c => c.name === countyName);
-        document.getElementById("report").innerHTML = county[0]["name"] + " County\n" 
-                                                        + "County Seat: " + county[0]["seat"] + "\n" +
-                                                        + "Lisence Plate Number: " + county[0]["license"]; 
+    numEntries = 0;
+    numCorrect = 0;
+    numCounties = 56;
+    counties = [];
+    gameStarted = false;
+
+    shuffle = (array) => {
+        let tmp, current, top = array.length;
+        if(top) while(--top) {
+            current = Math.floor(Math.random()*(top + 1));
+            tmp = array[current];
+            array[current] = array[top];
+            array[top] = tmp;
+        }
+        return array;
     };
+
+    handleStart = () => {
+        //this.startTimer()
+        this.reset();
+        document.getElementById("score").innerHTML = this.numCorrect + "/56";
+        this.gameStarted = true;
+        document.getElementById("start").disabled = true;
+        let counties = [];
+        counties.length = this.state.counties.length;
+        for(let i = 0; i < counties.length; i++){
+            counties[i] = this.state.counties[i].name;
+        }
+        counties = this.shuffle(counties);
+        this.counties = counties;
+        this.numCorrect = 0;
+        document.getElementById("countyToFind").innerHTML = "Enter the license plate number for " + this.counties[this.numCorrect] + " County";
+        //this.stopTimer();
+    }
+
+
+    handleGiveUp = () => {
+        document.getElementById("start").disabled = false;
+        this.reset();
+       // this.stopTimer();
+    };
+
+    handleSelect = (countyName) => {
+        if(!this.gameStarted){
+            this.handleStart();
+        }
+    };
+
+    checkGameInput = (entry) => {
+
+        let county = this.state.counties.filter(c => c.name === this.counties[this.numCorrect]);
+        let number = county[0].license.toString();
+        console.log(number);
+
+        if(entry === number){
+            document.getElementById(this.counties[this.numCorrect]).style.fill = "antiquewhite";
+            document.getElementById("gameinput").value = "";
+            this.numCorrect ++;
+            document.getElementById("score").innerHTML = this.numCorrect + "/56";
+        }
+
+        if(this.numCorrect == this.counties.length){
+            document.getElementById("countyToFind").innerHTML = "Way to go! You got 100% genius";
+            document.getElementById("start").disabled = false;
+        }
+        else{
+            document.getElementById("countyToFind").innerHTML = "Enter the license plate number for " + this.counties[this.numCorrect] + " County";
+            console.log(this.counties[this.numCorrect]);
+            document.getElementById(this.counties[this.numCorrect]).style.fill = "blue";
+        }
+    }
+
+    reset = () => {
+        document.getElementById("score").innerHTML = "";
+        this.numCorrect = 0;
+    }
 
     render() { 
         const onSelect = this.props;
 
         return ( 
             <div>
+            <div id="countyToFind"></div>
+            <button 
+                    id="start"
+                    onClick={() => this.handleStart()} 
+                    className="btn btn-secondary btn-sm"
+            >
+                Start
+            </button>
+            <button 
+                    onClick={() => this.handleGiveUp()} 
+                    className="btn btn-secondary btn-sm"
+            >
+                Give Up
+            </button>
+            <form>
+                <input type="text" id="gameinput"
+                    onChange={e => {this.checkGameInput(e.target.value);}}
+                    placeholder="Enter county seat">
+                </input>
+            </form>
+            <span id="score"></span>
             <div id="report"></div>
             <React.Fragment>
                 <Montana 
@@ -88,5 +178,5 @@ class Counties extends React.Component {
         );
     }
 }
- 
+
 export default Counties;

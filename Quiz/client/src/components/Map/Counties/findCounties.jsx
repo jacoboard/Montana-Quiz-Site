@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Montana from './Montana';
+//import StopWatch from './stopwatch';
 
 class Counties extends React.Component {
     state = {
@@ -25,7 +26,7 @@ class Counties extends React.Component {
             { id: "teton", name: "Teton" },
             { id: "blaine", name: "Blaine" },
             { id: "broadwater", name: "Broadwater" },
-            { id: "silverbow", name: "Siverbow" },
+            { id: "silverbow", name: "Silver Bow" },
             { id: "carbon", name: "Carbon" },
             { id: "garfield", name: "Garfield" },
             { id: "missoula", name: "Missoula" },
@@ -60,9 +61,7 @@ class Counties extends React.Component {
             { id: "sanders", name: "Sanders" },
             { id: "richland", name: "Richland" },
             { id: "bighorn", name: "Bighorn" }
-        ],
-        time: 0,
-        score: 0
+        ]
     };
 
     //timer = document.getElementById("stopwatch");
@@ -144,23 +143,27 @@ class Counties extends React.Component {
         for(let i = 0; i < this.counties.length; i++){
             document.getElementById(this.counties[i]).style.fill = "antiquewhite";
         }
+        document.getElementById("score").innerHTML = "";
     }
 
     handleStart = () => {
         //this.startTimer()
-        this.reset();
+        if(this.numClicks != 0){
+            this.reset();
+        }
+        document.getElementById("score").innerHTML = this.numCorrect + "/56";
         this.gameStarted = true;
         document.getElementById("start").disabled = true;
         let counties = [];
         counties.length = this.state.counties.length;
         for(let i = 0; i < counties.length; i++){
-            counties[i] = this.state.counties[i].id;
+            counties[i] = this.state.counties[i].name;
         }
         counties = this.shuffle(counties);
         this.counties = counties;
         this.numClicks = 0;
         this.numCorrect = 0;
-        document.getElementById("countyToFind").innerHTML = counties[this.numClicks];
+        document.getElementById("countyToFind").innerHTML = counties[this.numClicks] + " County";
         document.getElementById("start").disabled = true;
 
         
@@ -170,6 +173,7 @@ class Counties extends React.Component {
 
     handleGiveUp = () => {
         document.getElementById("start").disabled = false;
+        document.getElementById("countyToFind").innerHTML = "";
         this.reset();
        // this.stopTimer();
     }
@@ -182,24 +186,27 @@ class Counties extends React.Component {
         if(!this.gameStarted){
             this.handleStart();
         }
-        console.log("countyName is " + countyName);
-        console.log("counties[this.numClicks]" + this.counties[0])
         if(countyName == this.counties[this.numClicks]){
             document.getElementById(this.counties[this.numClicks]).style.fill = "green";
             this.numClicks++;
             this.numCorrect++;
+            document.getElementById("score").innerHTML = this.numCorrect + "/56";
         }else if(countyName != this.counties[this.numClicks]){
             document.getElementById(this.counties[this.numClicks]).style.fill = "red";
             this.numClicks++;
         }
 
         if(this.numClicks == this.counties.length){
-            document.getElementById("countyToFind").innerHTML = "Congrats; game over";
+            if(this.numCorrect == 56){
+                document.getElementById("countyToFind").innerHTML = "Way to go! You got 100% genius";
+            }
+            else {
+                document.getElementById("countyToFind").innerHTML = "Congrats; game over";
+            }
             document.getElementById("start").disabled = false;
-            this.reset();
             //take to new page
         }else{
-            document.getElementById("countyToFind").innerHTML = this.counties[this.numClicks];
+            document.getElementById("countyToFind").innerHTML = this.counties[this.numClicks] + " County";
 
         }
         return countyName;
@@ -225,6 +232,7 @@ class Counties extends React.Component {
             <span id="stopwatch">
                 00:00:00
             </span>
+            <span id="score"></span>
             <React.Fragment>
                 <Montana 
                     onSelect={this.handleSelect}

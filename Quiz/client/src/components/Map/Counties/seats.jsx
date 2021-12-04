@@ -25,7 +25,7 @@ class Counties extends React.Component {
             { id: "teton", name: "Teton", license: 31, seat: "Choteau" },
             { id: "blaine", name: "Blaine", license: 24, seat: "Chinook" },
             { id: "broadwater", name: "Broadwater", license: 43, seat: "Townsend" },
-            { id: "silverbow", name: "Siverbow", license: 1, seat: "Butte" },
+            { id: "silverbow", name: "Silver Bow", license: 1, seat: "Butte" },
             { id: "carbon", name: "Carbon", license: 10, seat: "Red Lodge" },
             { id: "garfield", name: "Garfield", license: 50, seat: "Jordan" },
             { id: "missoula", name: "Missoula", license: 4, seat: "Missoula" },
@@ -63,6 +63,12 @@ class Counties extends React.Component {
         ]
     };
 
+    numEntries = 0;
+    numCorrect = 0;
+    numCounties = 56;
+    counties = [];
+    gameStarted = false;
+
     shuffle = (array) => {
         let tmp, current, top = array.length;
         if(top) while(--top) {
@@ -72,42 +78,74 @@ class Counties extends React.Component {
             array[top] = tmp;
         }
         return array;
-    }
-
-    handleStart = () => {
-        let numbers = [];
-        let counties = [];
-        for(let i = 0; i < 56; i++){
-            counties.push(i);
-            numbers.push(i);
-        }
-        numbers = this.shuffle(numbers);
-        for(let i = 0; i < 56; i++){
-            counties[i] = this.state.counties[numbers[i]].name;
-        }
-        this.beginGame(counties);
-    }
-
-    beginGame = (counties) => {
-        let i = counties.length;
-        while(i > 0){
-            document.getElementById("report").innerHTML = "What is the county seat of " + counties[i] + " County?";
-            i --;
-        }
-    }
-
-    handleSelect = (countyName) => {
-        // <h1>{ countyId }</h1>;
-        let county = this.state.counties.filter(c => c.id === countyName);
-        document.getElementById("report").innerHTML = county[0]["name"] + " County";
     };
 
+    handleStart = () => {
+        //this.startTimer()
+        this.reset();
+        document.getElementById("score").innerHTML = this.numCorrect + "/56";
+        this.gameStarted = true;
+        document.getElementById("start").disabled = true;
+        let counties = [];
+        counties.length = this.state.counties.length;
+        for(let i = 0; i < counties.length; i++){
+            counties[i] = this.state.counties[i].name;
+        }
+        counties = this.shuffle(counties);
+        this.counties = counties;
+        this.numCorrect = 0;
+        document.getElementById("countyToFind").innerHTML = "Enter the county seat of " + this.counties[this.numCorrect] + " County";
+        //this.stopTimer();
+    }
+
+
+    handleGiveUp = () => {
+        document.getElementById("start").disabled = false;
+        this.reset();
+       // this.stopTimer();
+    };
+
+    handleSelect = (countyName) => {
+        if(!this.gameStarted){
+            this.handleStart();
+        }
+    };
+
+    checkGameInput = (entry) => {
+        entry = entry.replace(/\s+/g, '').toLowerCase();
+
+        let county = this.state.counties.filter(c => c.name === this.counties[this.numCorrect]);
+        let seat = county[0].seat.replace(/\s+/g, '').toLowerCase();
+        console.log(seat);
+        if(entry === seat){
+            document.getElementById(this.counties[this.numCorrect]).style.fill = "antiquewhite";
+            document.getElementById("gameinput").value = "";
+            this.numCorrect ++;
+            document.getElementById("score").innerHTML = this.numCorrect + "/56";
+        }
+
+        if(this.numCorrect == this.counties.length){
+            document.getElementById("countyToFind").innerHTML = "Way to go! You got 100% genius";
+            document.getElementById("start").disabled = false;
+        }
+        else{
+            document.getElementById("countyToFind").innerHTML = "Enter the county seat of " + this.counties[this.numCorrect] + " County";
+            console.log(this.counties[this.numCorrect]);
+            document.getElementById(this.counties[this.numCorrect]).style.fill = "blue";
+        }
+    }
+
+    reset = () => {
+        document.getElementById("score").innerHTML = "";
+        this.numCorrect = 0;
+    }
 
     render() { 
         const onSelect = this.props;
 
         return ( 
             <div>
+            <div id="countyToFind"></div>
             <button 
                     id="start"
                     onClick={() => this.handleStart()} 
@@ -121,7 +159,13 @@ class Counties extends React.Component {
             >
                 Give Up
             </button>
-            
+            <form>
+                <input type="text" id="gameinput"
+                    onChange={e => {this.checkGameInput(e.target.value);}}
+                    placeholder="Enter county seat">
+                </input>
+            </form>
+            <span id="score"></span>
             <div id="report"></div>
             <React.Fragment>
                 <Montana 
@@ -134,5 +178,5 @@ class Counties extends React.Component {
         );
     }
 }
- 
+
 export default Counties;
