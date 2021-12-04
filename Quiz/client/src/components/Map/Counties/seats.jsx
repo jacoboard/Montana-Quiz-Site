@@ -138,7 +138,6 @@ class Counties extends React.Component {
         }
         else{
             document.getElementById("countyToFind").innerHTML = "Enter the county seat of " + this.counties[this.numCorrect] + " County";
-            console.log(this.counties[this.numCorrect]);
         }
     }
 
