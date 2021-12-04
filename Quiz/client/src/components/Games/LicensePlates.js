@@ -1,17 +1,17 @@
 import { Container, AppBar, Typography } from '@material-ui/core';
-import Posts from '../../components/Posts/Posts.js';
-import Form from '../../components/Form/Form.js';
-import Map from '../../components/Map/Map.js';
+import Posts from '../Posts/Posts.js';
+import Form from '../Form/Form.js';
+import LincensePlate from '../Map/Counties/licensePlate';
 import useStyles from './styles.js'
 
-function CountySelector(){
+function LicensePlates(){
     const classes = useStyles();
     return(
         <div>
             <h1>THIS IS THE ABOUT PAGE</h1>
                 <Container maxWidth="md">
                     <Container align="center">
-                            <Map />
+                            <LincensePlate />
                             <div id="belowMap"> This is below map</div>
                     </Container>
                     <Container align="center">
@@ -29,4 +29,4 @@ function CountySelector(){
     );
 }
 
-export default CountySelector;
+export default LicensePlates;

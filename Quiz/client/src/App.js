@@ -11,9 +11,9 @@ import About from './components/About/About.js';
 import Game2LeaderBoard from './components/LeaderBoards/Game2'
 import CountySelectionLeaderBoard from './components/LeaderBoards/Game2'
 import Game3LeaderBoard from './components/LeaderBoards/Game3'
-import Game2 from './components/Games/Game2'
-import CountySelection from './components/Games/CountySelector'
-import Game3 from './components/Games/Game3'
+import Game2 from './components/Games/LicensePlates'
+import CountySelection from './components/Games/FindCounty'
+import Game3 from './components/Games/CountySeats'
 
 
 function App() {

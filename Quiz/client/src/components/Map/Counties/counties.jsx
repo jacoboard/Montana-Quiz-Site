@@ -66,9 +66,10 @@ class Counties extends React.Component {
     handleSelect = (countyName) => {
         // <h1>{ countyId }</h1>;
         let county = this.state.counties.filter(c => c.name === countyName);
-        document.getElementById("report").innerHTML = county[0]["name"] + " County\n" 
-                                                        + "County Seat: " + county[0]["seat"] + "\n" +
-                                                        + "Lisence Plate Number: " + county[0]["license"]; 
+
+        document.getElementById("name").innerHTML = county[0]["name"] + " County";
+        document.getElementById("seat").innerHTML = "County Seat: " + county[0]["seat"];
+        document.getElementById("license plate").innerHTML = "Lisence Plate Number: " + county[0]["license"];
     };
 
     render() { 
@@ -76,7 +77,10 @@ class Counties extends React.Component {
 
         return ( 
             <div>
-            <div id="report"></div>
+            <div id="name"></div>
+            <div id="seat"></div>
+            <div id="license plate"></div>
+
             <React.Fragment>
                 <Montana 
                     onSelect={this.handleSelect}
