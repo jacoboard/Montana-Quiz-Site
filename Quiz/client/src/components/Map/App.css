@@ -1,4 +1,4 @@
-#belowMap{
+#belowMap {
   background-color: red;
   display: flex;
   align-items: center;
@@ -7,19 +7,15 @@
   padding: 15% 0;
 }
 
-Button{
-  background-color: black;
-}
-
-#copyright_footer{
+#copyright_footer {
   display: block;
 }
 
-#signUp{
+#signUp {
   display: block;
 }
 
-#footer{
+#footer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,144 +26,142 @@ Button{
   border-radius: 15px;
 }
 
-#footer ul{
+#footer ul {
   display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-#footer ul li{
+#footer ul li {
   display: block;
-    color: white;
-    text-align: center;
-    padding: 7px 16px;
-    text-decoration: none;
-}
-#footer ul li a{
+  color: white;
+  text-align: center;
+  padding: 7px 16px;
   text-decoration: none;
-  color:#002587;
 }
-#footer ul li a:hover{
+#footer ul li a {
+  text-decoration: none;
+  color: #002587;
+}
+#footer ul li a:hover {
   color: #303f9f;
 }
 
-html{
+html {
   font-family: fantasy;
 }
 
-#postWraper{
+#postWraper {
   background-color: magenta;
   padding: 1%;
   margin: 2% 0%;
 }
 
-
-
 .Map {
-    text-align: center;
-  }
-  
+  text-align: center;
+}
+
+.Map-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
   .Map-logo {
-    height: 40vmin;
-    pointer-events: none;
+    animation: Map-logo-spin infinite 20s linear;
   }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .Map-logo {
-      animation: Map-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .Map-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .Map-link {
-    color: #61dafb;
-  }
+}
 
-  #NavBar{
-    margin: auto;
-    width: 60%;
-    padding: 10px;
-  }
+.Map-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 
-  #NavBar ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    text-align: center;
-  }
+.Map-link {
+  color: #61dafb;
+}
 
-  #NavBar li{
-    display: inline;
-    align-items: center;
-  }
+#NavBar {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
 
-  #NavBar li a{
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+#NavBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  text-align: center;
+}
 
-  #NavBar li:last-child{
-    border-bottom: none;
-  }
+#NavBar li {
+  display: inline;
+  align-items: center;
+}
 
-  #NavBar li a:hover{
-    background-color: #422119;
+#NavBar li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#NavBar li:last-child {
+  border-bottom: none;
+}
+
+#NavBar li a:hover {
+  background-color: #422119;
+}
+
+@keyframes Map-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  @keyframes Map-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
   }
-  
-  #Map_Div path {
-    font-style:normal;
-    font-weight:400;
-    font-size:32.8125px;
-    font-family:'MS Shell Dlg 2';
-    fill:antiquewhite;
-    fill-opacity:1;
-    stroke:black;
-    stroke-width:5;
-    stroke-linecap:square;
-    stroke-linejoin:round;
-    stroke-opacity:1;
-  }
-  
-  #Map_Div path:hover{
-    fill: #dc8f41;
-  }
+}
+
+#Map_Div path {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32.8125px;
+  font-family: "MS Shell Dlg 2";
+  fill: antiquewhite;
+  fill-opacity: 1;
+  stroke: black;
+  stroke-width: 5;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+  stroke-opacity: 1;
+}
+
+#Map_Div path:hover {
+  fill: #dc8f41;
+}
 
 .MuiButton-containedPrimary:hover {
   background-color: #002587;
 }
 .MuiTypography-h3 {
-    text-decoration: none;
-    color: #002587;
+  text-decoration: none;
+  color: #002587;
 }
 
-  #report{
-    background-color: white;
-    font-size: 2em;
-    border-radius: 15px;
-  }
+#report {
+  background-color: white;
+  font-size: 2em;
+  border-radius: 15px;
+}
