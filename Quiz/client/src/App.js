@@ -25,15 +25,24 @@ const App = () => {
             </AppBar>
             <Container align="center">
                     <Map />
+                    <div id="belowMap"> This is below map</div>
             </Container>
             <Container align="center">
+                <div id="formWraper">
                     <Form />
+                </div>
             </Container>
             <Container align="center">
+                <div id="postWraper">
                     <Posts />
+                </div>
+                    <div id="footer"> This is the footer</div>
             </Container>
+            
         </Container>
+
+        
     )
 }
 
-export default App;
+export default App; 
