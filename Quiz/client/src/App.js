@@ -9,8 +9,8 @@ import Home from './components/Home/Home.js';
 import Auth from './components/Auth/Auth.js';
 import About from './components/About/About.js';
 import LicensePlatesLeaderBoard from './components/LeaderBoards/LicensePlatesLeaderBoard'
-import CountySelectionLeaderBoard from './components/LeaderBoards/CountySelectionLeaderBoard'
-import findCountyLeaderBoard from './components/LeaderBoards/FindCountyLeaderBoard'
+import CountySeatsLeaderBoard from './components/LeaderBoards/CountySeatsLeaderBoard'
+import FindCountyLeaderBoard from './components/LeaderBoards/FindCountyLeaderBoard'
 import LicensePlates from './components/Games/LicensePlates'
 import CountySeats from './components/Games/CountySeats'
 import FindCounty from './components/Games/FindCounty';
@@ -39,8 +39,8 @@ function App() {
                         <a href="javascript:void(0)" class="dropbtn">Leader Boards</a>
                         <div class="dropdown-content">
                             <li> <Link to="/LicensePlatesLeaderBoard">License Plates</Link></li>
-                            <li> <Link to="/findCountyLeaderBoard">County Selection</Link></li>
-                            <li> <Link to="/countySeatsLeaderBoard">County Seats</Link></li>
+                            <li> <Link to="/FindCountyLeaderBoard">County Selection</Link></li>
+                            <li> <Link to="/CountySeatsLeaderBoard">County Seats</Link></li>
                         </div>     
                     </ul>
                     
@@ -54,8 +54,8 @@ function App() {
                 <Route path="/findCounty" element={<FindCounty/>} />
                 <Route path="/LicensePlates" element={<LicensePlates/>} />
                 <Route path="/countySeats" element={<CountySeats/>} />
-                <Route path="/countySelectionLeaderBoards" element={<CountySelectionLeaderBoard/>} />
-                <Route path="/findCountyLeaderBoard" element={<Auth/>} />
+                <Route path="/CountySeatsLeaderBoard" element={<CountySeatsLeaderBoard/>} />
+                <Route path="/FindCountyLeaderBoard" element={<FindCountyLeaderBoard/>} />
                 <Route path="/licensePlatesLeaderBoard" element={<LicensePlatesLeaderBoard/>} />
             </Routes>
         </Container>
