@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import * as api from '../api';
 
 // Action Creators
@@ -21,7 +20,6 @@ export const createPost = (post) => async (dispatch) => {
         console.log(error);
     }
 }
-=======
 import * as api from '../api';
 
 // Action Creators
@@ -44,4 +42,3 @@ export const createPost = (post) => async (dispatch) => {
         console.log(error);
     }
 } 
->>>>>>> fd142228969a01fa3493249e786cbe4f7408f228
