@@ -1,4 +1,4 @@
-# Montana-Quiz-Site - (SITE GOES HERE)
+# Montana-Quiz-Site - (URL GOES HERE)
 
 ## Setup MongoDB
 
