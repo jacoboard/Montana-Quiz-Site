@@ -101,6 +101,9 @@ class Counties extends React.Component {
 
 
     handleGiveUp = () => {
+        if(document.getElementById("start").innerHTML == "Restart"){
+            document.getElementById("start").innerHTML = "Start";
+        }
         document.getElementById("start").disabled = false;
         for(let i = 0; i < this.counties.length; i++){
             document.getElementById(this.counties[i]).style.fill = "antiquewhite";
@@ -129,6 +132,7 @@ class Counties extends React.Component {
         }
 
         if(this.numCorrect == this.counties.length){
+            document.getElementById("start").innerHTML = "Restart";
             document.getElementById("countyToFind").innerHTML = "Way to go! You got 100% genius";
             document.getElementById("start").disabled = false;
         }
