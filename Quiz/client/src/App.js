@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Router, Routes, Route, Link } from 'react-router-dom';
 
 import useStyles from './styles.js'
 import './components/Map/App.css'
@@ -8,33 +8,77 @@ import Navbar from './components/Navbar/Navbar.js';
 import Home from './components/Home/Home.js';
 import Auth from './components/Auth/Auth.js';
 import About from './components/About/About.js';
+import Game2LeaderBoard from './components/LeaderBoards/Game2'
+import CountySelectionLeaderBoard from './components/LeaderBoards/Game2'
+import Game3LeaderBoard from './components/LeaderBoards/Game3'
+import Game2 from './components/Games/Game2'
+import CountySelection from './components/Games/CountySelector'
+import Game3 from './components/Games/Game3'
 
-const App = () => (
+
+function App() {
+    return(
+       
     <BrowserRouter>
+    <div id="mainContent">
         <Container maxWidth="lg">
             <Navbar />
             <div id="NavBar">
-                <ul>
+                <ul id="NavBarUL">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
-                    <li><Link to="/leaderBoard">Leader Board</Link></li>
-                    <li><Link to="/">Game</Link></li>
+                    <ul class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Games</a>
+                        <div class="dropdown-content">
+                            <li> <Link to="/game2">Game 2</Link></li>
+                            <li> <Link to="/countySelection">County Selection</Link></li>
+                            <li> <Link to="/game3">Game 3</Link></li>
+                        </div>     
+                    </ul>
+                    <ul class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Leader Boards</a>
+                        <div class="dropdown-content">
+                            <li> <Link to="/game2LeaderBoard">Game 2</Link></li>
+                            <li> <Link to="/countySelectionLeaderBoard">County Selection</Link></li>
+                            <li> <Link to="/game3LeaderBoard">Game 3</Link></li>
+                        </div>     
+                    </ul>
                     
                 </ul>
             </div>
+        
             <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/auth" element={<Auth/>} />
                 <Route path="/about" element={<About/>} />
             </Routes>
         </Container>
-        <div id="footer">
-            <ul id="footer_content_list">
-                <li>&copy; Montana Quiz Site</li>
-                <li>New to Montana Quiz Site?<a href="./Auth"> <b>Sign Up Here</b></a></li>
-            </ul>
+
         </div>
+
+       
+        
     </BrowserRouter>
-);
+    );
+}
 
 export default App;
+
+
+
+{/* <div class="dropdown">
+  <button
+    class="btn btn-primary dropdown-toggle"
+    type="button"
+    id="dropdownMenuButton"
+    data-mdb-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div> */}
