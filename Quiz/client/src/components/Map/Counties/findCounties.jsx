@@ -89,9 +89,9 @@ class Counties extends React.Component {
     }
 
     handleStart = () => {
-        if(this.numClicks != 0){
-            this.reset();
-        }
+        this.reset();
+        this.numClicks = 0;
+        this.numCorrect = 0;
         document.getElementById("score").innerHTML = this.numCorrect + "/56";
         this.gameStarted = true;
         document.getElementById("start").disabled = true;
@@ -102,8 +102,6 @@ class Counties extends React.Component {
         }
         counties = this.shuffle(counties);
         this.counties = counties;
-        this.numClicks = 0;
-        this.numCorrect = 0;
         document.getElementById("countyToFind").innerHTML = counties[this.numClicks] + " County";
         document.getElementById("start").disabled = true;
     }
