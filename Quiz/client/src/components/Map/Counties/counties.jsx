@@ -63,11 +63,19 @@ class Counties extends React.Component {
         ]
     };
 
+    lastVisited = "";
+
     handleSelect = (countyName) => {
         // <h1>{ countyId }</h1>;
         let county = this.state.counties.filter(c => c.name === countyName);
-
+        
+        if(this.lastVisited != ""){
+            document.getElementById(this.lastVisited).style.fill = "antiquewhite";
+        }
+        
         document.getElementById("name").innerHTML = county[0]["name"] + " County";
+        document.getElementById(county[0]["name"]).style.fill = "blue";
+        this.lastVisited = county[0]["name"];
         document.getElementById("seat").innerHTML = "County Seat: " + county[0]["seat"];
         document.getElementById("license plate").innerHTML = "Lisence Plate Number: " + county[0]["license"];
     };
