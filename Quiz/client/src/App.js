@@ -49,8 +49,15 @@ function App() {
         
             <Routes>
                 <Route path="/" element={<Home/>} />
+                <Route path="/home" element={<Home/>} />
                 <Route path="/auth" element={<Auth/>} />
                 <Route path="/about" element={<About/>} />
+                <Route path="/game2" element={<Game2/>} />
+                <Route path="/game3" element={<Game3/>} />
+                <Route path="/countySelection" element={<CountySelection/>} />
+                <Route path="/game2LeaderBoard" element={<Game2LeaderBoard/>} />
+                <Route path="/countySelectionLeaderBoard" element={<CountySelectionLeaderBoard/>} />
+                <Route path="/game3LeaderBoard" element={<Game3LeaderBoard/>} />
             </Routes>
         </Container>
 

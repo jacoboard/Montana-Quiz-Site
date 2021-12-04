@@ -67,7 +67,7 @@ class Counties extends React.Component {
         // <h1>{ countyId }</h1>;
         let county = this.state.counties.filter(c => c.name === countyName);
         document.getElementById("report").innerHTML = county[0]["name"] + " County\n" 
-                                                        + "County Seat: " + county[0]["seat"] + "\n" +
+                                                        + "County Seat: " + county[0]["seat"] + "\n"
                                                         + "Lisence Plate Number: " + county[0]["license"]; 
     };
 
