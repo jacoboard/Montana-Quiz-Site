@@ -9,8 +9,12 @@ import Map from './components/Map/Map.js';
 import memories from './images/Montana.png';
 import useStyles from './styles.js'
 
+
 function Home(){
     const classes = useStyles();
+    let score = 50;
+    let userName = "John";
+    console.log(score);
 
     return(
         <Container maxWidth="md">
@@ -29,7 +33,8 @@ function Home(){
             </Container>
             <Container align="center">
                 <div id="postWraper">
-                    <Posts />
+                    <Posts score={score} userName={userName}/>
+                    <h1>${score} is score and ${username} is username</h1>
                 </div>
                
             </Container>

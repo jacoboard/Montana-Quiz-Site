@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import Montana from './Montana';
+import Form from '../../Form/Form';
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux';
+import { Container } from '@material-ui/core';
+
 
 class Counties extends React.Component {
     state = {
@@ -68,6 +73,7 @@ class Counties extends React.Component {
     numCounties = 56;
     counties = [];
     gameStarted = false;
+    myRef= React.createRef();
 
     //https://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-javascript
     shuffle = (array) => {
@@ -113,6 +119,11 @@ class Counties extends React.Component {
         document.getElementById("start").disabled = false;
         document.getElementById("countyToFind").innerHTML = "";
         this.reset();
+        this.showForm();
+    }
+
+    showForm = () =>{
+        return <div></div>
     }
 
     handleSelect = (countyName) => {
@@ -120,9 +131,11 @@ class Counties extends React.Component {
         if(this.numClicks == this.counties.length){
             this.reset();
             this.gameStarted = false;
+            this.myRef = <Form />
         }
         if(!this.gameStarted){
-            this.handleStart();
+            document.getElementById("countyToFind").innerHTML = "You Must Click Start To Begin!!";
+
         }
        
         if(countyName == this.counties[this.numClicks]){
@@ -144,6 +157,7 @@ class Counties extends React.Component {
                 document.getElementById("countyToFind").innerHTML = "Congrats; game over";
             }
             document.getElementById("start").disabled = false;
+            this.showForm();
         }else{
             document.getElementById("countyToFind").innerHTML = this.counties[this.numClicks] + " County";
 
@@ -174,6 +188,10 @@ class Counties extends React.Component {
                     onSelect={this.handleSelect}
                 />
             </React.Fragment>
+
+            <div>
+                ref = {this.myRef}
+            </div>
             
         </div>
         );

@@ -9,7 +9,7 @@ function LicensePlates(){
     return(
         <div>
             <div id='GameInstructions'>
-            <h1>License Plates Finding</h1>
+            <h1>County License Plates Number</h1>
             <h2>Ready to test your skills?</h2>
             <h2>This is a test of if you know that License Plates number of a county</h2>
             <h2>Press start to begin or click on the form to begin!</h2>

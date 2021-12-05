@@ -9,7 +9,7 @@ function CountySeats(){
     return(
         <div>
             <div id='GameInstructions'>
-            <h1>County Seats Guess</h1>
+            <h1>Enter The County Seat</h1>
             <h2>Do you know the county seats of each county?</h2>
             <h3>When you're ready to begin click on form or start button to begin!</h3>
             </div>
@@ -19,17 +19,9 @@ function CountySeats(){
                     <div id="Map_Div">
                         <Seats />
                     </div>
-                            
-                            <div id="belowMap"> This is below map</div>
                     </Container>
                     <Container align="center">
                         <div id="formWraper">
-                            <Form />
-                        </div>
-                    </Container>
-                    <Container align="center">
-                        <div id="postWraper">
-                            <Posts />
                         </div>
                     </Container>
                 </Container>
