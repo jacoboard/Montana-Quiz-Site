@@ -169,6 +169,7 @@ class Counties extends React.Component {
             return (  
                 <div>
                     <div id="countyToFind"></div>
+                    <span id="score"></span>
                     <button 
                         id="start"
                         onClick={() => this.handleStart()} 
@@ -182,7 +183,7 @@ class Counties extends React.Component {
                     >
                         Give Up
                     </button>
-                    <span id="score"></span>
+                    
                     <React.Fragment>
                         <Montana 
                             onSelect={this.handleSelect}
@@ -207,7 +208,7 @@ class Counties extends React.Component {
                     >
                         Give Up
                     </button>
-                    <span id="score"></span>
+                    
                     <React.Fragment>
                         <Montana 
                             onSelect={this.handleSelect}

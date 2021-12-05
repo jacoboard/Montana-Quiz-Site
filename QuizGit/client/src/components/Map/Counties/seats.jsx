@@ -159,6 +159,7 @@ class Counties extends React.Component {
             return ( 
                 <div>
                 <div id="countyToFind"></div>
+                <span id="score"></span>
                 <button 
                         id="start"
                         onClick={() => this.handleStart()} 
@@ -179,7 +180,7 @@ class Counties extends React.Component {
                         placeholder="Enter county seat">
                     </input>
                 </form>
-                <span id="score"></span>
+            
                 <div id="report"></div>
                 <React.Fragment>
                     <Montana 
