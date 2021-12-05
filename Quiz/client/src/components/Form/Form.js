@@ -33,8 +33,8 @@ const Form = ({score, userName}) => {
         return(
             <Paper className={classes.paper}>
                 <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                    <Typography cariant="h6">Enter your name to be placed on the leaderboard!\n</Typography>
-                    <Typography cariant="h6">{"You scored: "+ userName +" points"}</Typography>
+                    <Typography variant="h6">{"Enter your name to be placed on the leaderboard!"}</Typography>
+                    <Typography variant="h6">{"You scored: "+ score +" points"}</Typography>
                     <TextField name="name" variant="outlined" label="Name" fullWidth value={postData.name} onChange={(e) => setPostData({...postData, name: e.target.value })}/>
                     <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" width="small">Submit</Button>
                 </form>

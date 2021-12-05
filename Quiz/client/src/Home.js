@@ -12,9 +12,12 @@ import useStyles from './styles.js'
 
 function Home(){
     const classes = useStyles();
-    let score = 50;
-    let userName = "John";
+    let playerscore = 50;
+    let playersubmission = "John";
     console.log(score);
+    for(let i = 0; i < 31; i++){
+        console.log(i);
+    }
 
     return(
         <Container maxWidth="md">
@@ -25,18 +28,6 @@ function Home(){
             <Container align="center">
                     <Map />
                     <div id="belowMap"> This is below map</div>
-            </Container>
-            <Container align="center">
-                <div id="formWraper">
-                    <Form />
-                </div>
-            </Container>
-            <Container align="center">
-                <div id="postWraper">
-                    <Posts score={score} userName={userName}/>
-                    <h1>${score} is score and ${username} is username</h1>
-                </div>
-               
             </Container>
         </Container>
         

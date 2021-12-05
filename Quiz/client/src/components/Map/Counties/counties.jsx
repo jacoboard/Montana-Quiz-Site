@@ -77,7 +77,7 @@ class Counties extends React.Component {
         document.getElementById(county[0]["name"]).style.fill = "blue";
         this.lastVisited = county[0]["name"];
         document.getElementById("seat").innerHTML = "County Seat: " + county[0]["seat"];
-        document.getElementById("license plate").innerHTML = "Lisence Plate Number: " + county[0]["license"];
+        document.getElementById("license plate").innerHTML = "License Plate Number: " + county[0]["license"];
     };
 
     render() { 
@@ -85,18 +85,20 @@ class Counties extends React.Component {
 
         return ( 
             <div>
-            <div id="name"></div>
-            <div id="seat"></div>
-            <div id="license plate"></div>
-
+            <div id="MapInfo">
+                <h2 id="name"></h2>
+                <h2 id="seat"></h2>
+                <h2 id="license plate"></h2>
+            </div>
             <React.Fragment>
                 <Montana 
                     onSelect={this.handleSelect}
                 />
 
             </React.Fragment>
-            
-        </div>
+
+            </div>
+        
         );
     }
 }

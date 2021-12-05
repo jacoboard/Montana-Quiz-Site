@@ -17,14 +17,12 @@ const Home = () => {
     return(
         <div>
             <Container align="center">
+                <h1>Welcome to the Montana Quiz Site!</h1>
+                <h2>Here you can learn via an interactive map what the county seats and license plate numbers are in montana counties, as well as where the counties are geographicaly</h2>
+                <h3>Click on a county to get started!</h3>
                 <Map />
             </Container>
-            <Container align="center">
-                <Form />
-            </Container>
-            <Container align="center">
-                <Posts />
-            </Container>
+            
         </div>
     );
 };

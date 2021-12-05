@@ -192,6 +192,10 @@ html {
   fill: #dc8f41;
 }
 
+#MapInfo{
+  background-color: #4f96ec;
+}
+
 .MuiButton-containedPrimary:hover {
   background-color: #002587;
 }
