@@ -153,7 +153,6 @@ class Counties extends React.Component {
             document.getElementById(this.counties[i]).style.fill = "antiquewhite";
         }
     }
-
     render() {
         if (this.gamefinished !== true) {
             return ( 

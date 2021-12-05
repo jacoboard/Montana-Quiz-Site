@@ -83,9 +83,12 @@ class Counties extends React.Component {
     render() { 
         return ( 
             <div>
-            <div id="name"></div>
-            <div id="seat"></div>
-            <div id="license plate"></div>
+                <div id="CountyInfo">
+                    <h2 id="name"></h2>
+                    <h2 id="seat"></h2>
+                    <h2 id="license plate"></h2>
+                </div>
+           
 
             <React.Fragment>
                 <Montana 
